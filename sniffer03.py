@@ -11,6 +11,9 @@ WHITELIST = ['de:ad:be:ef:ca:fe',] # Replace this with known device's MAC addres
 PACKET_FILE_PATH = 'logmacs.csv'
 headers = ['Date','Time','Mac','Name','Signal']
 
+def fileCleaner():
+    os.remove('logmacs.csv')
+
 class PacketHandler(object):
     def __init__(self, packet_file_path):
         self.packet_file_path = packet_file_path
@@ -51,10 +54,11 @@ def main():
     print "[%s] Starting scan" % datetime.now()
     print "Scanning..."
     with packet_handler as ph:
-        sniff(iface=sys.argv[1], prn=ph.handle_packet)
-        file_is_empty = os.stat('logmacs.csv').st_size == 0
-        if file_is_empty:
-            self.csv_writer.writerow(headers)
-
+         file_is_empty = os.stat('logmacs.csv').st_size == 0
+         if file_is_empty:
+               packet_handler.csv_writer.writerow(headers)
+         sniff(iface=sys.argv[1], prn=ph.handle_packet)
+    
 if __name__=="__main__":
+    fileCleaner()
     main()
