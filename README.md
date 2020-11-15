@@ -13,6 +13,6 @@ Current Problems
 
 To-do list
 ------------
- * Fix the header issue. Make it add header only once 
+ * Fix the header issue. Make it add header only once ✅
  * Run scanning every X minutes and give epoch counting to each scan
  * Output the result in csv format 
