@@ -5,7 +5,8 @@ INSTALLATION
  * Install all framworks (using pip)
  * Put your wifi card to monitor mode 
  * Navigate to the folder where the script is 
- * The output will be saved as an external CSV file
+ * Provide parameters in the following sequence: k, wifi card (in monitor mode) name
+ * Run the script with your settings of the parameters
 
 Current Problems
 ------------
@@ -16,3 +17,4 @@ To-do list
 ------------
  * Adding timer 
  * Tests for epoches in different time length
+ * Adding epoch length to command line parameter 
