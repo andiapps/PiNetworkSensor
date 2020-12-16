@@ -90,7 +90,8 @@ for i in range(args.numOfEp):
     print("This is epoch: " + str(i))
     sniff(iface = args.iface, prn=PacketHandler, timeout=args.epoch)
     df = pd.DataFrame(dFrame, columns=['MAC address'])
-    df.insert(0,'timestamp',time.strftime('%d-%m-%Y %H:%M:%S'))
+    df.insert(0,'timestamp {}'.format(time.strftime('%d-%m-%Y %H:%M:%S')), '')
+    df.insert(2,'Epoch {}'.format(i),'')
     concatList = []
     concatList.append(df)
     dfSum = pd.concat(concatList)
