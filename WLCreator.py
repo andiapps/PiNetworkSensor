@@ -90,4 +90,4 @@ cleaner.join()
 #Update the white list at the end
 dfCleanedCL = pd.read_csv('cleanedList.csv')
 finalWhiteList = dfWhiteList[dfWhiteList.MAC.isin(dfCleanedCL.MAC)]
-finalWhiteList.to_csv('finalOutput.csv', encoding='utf-8', index=True )
+finalWhiteList.to_csv('finalOutput.csv', encoding='utf-8', index=True ) 
