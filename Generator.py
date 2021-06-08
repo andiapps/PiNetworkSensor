@@ -93,6 +93,7 @@ def main():
                 time.sleep(abs(i[0] - timeStart))
                 print('slept for:::', abs(i[0] - timeStart))
                 probeGen(mac)
+                timeStart = 0
 
 if __name__ == "__main__":
     main()
